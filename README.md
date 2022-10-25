@@ -1,6 +1,6 @@
 # calculator-autumn-2022
 
-* Tsarik Sergei
-* Aponik Pavel
+* Sergei Tsarik
+* Pavel Aponik 
 * Nataliya Kleschenko
 * Anastasiya Khinevich

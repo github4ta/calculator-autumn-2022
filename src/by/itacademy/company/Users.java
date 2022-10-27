@@ -1,10 +1,10 @@
-package by.itacademy.company;
+package src.by.itacademy.company;
 
-import by.itacademy.user.User;
+import src.by.itacademy.user.User;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
+
 
 public class Users {
     public List<User> getUsersList(int amount) {

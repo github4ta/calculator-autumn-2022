@@ -10,7 +10,7 @@ public class Users {
     public List<User> getUsersList(int amount) {
         List<User> list = new ArrayList<>();
         for (int i = 0; i < amount; i++) {
-            list.add(new User(generateNumber(),"Emma"));
+            list.add(new User(generateNumber(), generateName()));
         }
         return list;
     }

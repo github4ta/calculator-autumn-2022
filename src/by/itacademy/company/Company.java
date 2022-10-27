@@ -1,19 +1,20 @@
-package by.itacademy.company;
+package src.by.itacademy.company;
 
-import by.itacademy.user.User;
+import src.by.itacademy.user.User;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Company{
-    private ArrayList <User> users;
+    private List <User> users;
     private String companyName;
 
-    public Company(ArrayList <User> users, String companyName){
+    public Company(List<User> users, String companyName){
         this.users = users;
         this.companyName = companyName;
     }
 
-    public Company(ArrayList <User> users){
+    public Company(List <User> users){
         this.users = users;
         this.companyName = "Company NoName";
     }
@@ -27,4 +28,5 @@ public class Company{
             System.out.println(u.getName());
         }
     }
+
 }

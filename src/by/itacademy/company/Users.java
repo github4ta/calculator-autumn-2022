@@ -1,4 +1,4 @@
-package src.by.itacademy.company;
+package by.itacademy.company;
 
 import by.itacademy.user.User;
 
@@ -28,4 +28,5 @@ public class Users {
         result = result.substring(0, 1).toUpperCase() + result.substring(1).toLowerCase();
         return result;
     }
+
 }

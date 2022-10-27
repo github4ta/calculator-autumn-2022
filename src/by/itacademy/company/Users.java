@@ -14,4 +14,8 @@ public class Users {
         }
         return list;
     }
+
+    private int generateNumber(){
+    return Math.random()*99 + 1;
+    }
 }

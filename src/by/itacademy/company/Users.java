@@ -1,4 +1,4 @@
-package by.itacademy.company;
+package src.by.itacademy.company;
 
 import by.itacademy.user.User;
 
@@ -16,6 +16,6 @@ public class Users {
     }
 
     private int generateNumber(){
-    return Math.random()*99 + 1;
+    return (int) Math.random()*99 + 1;
     }
 }

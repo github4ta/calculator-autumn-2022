@@ -1,8 +1,6 @@
-package src.by.itacademy.company;
+package by.itacademy.company;
 
-import src.by.itacademy.user.User;
-
-import java.util.ArrayList;
+import by.itacademy.user.User;
 import java.util.List;
 
 public class Company{

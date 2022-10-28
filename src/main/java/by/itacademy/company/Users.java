@@ -1,10 +1,8 @@
-package src.by.itacademy.company;
+package by.itacademy.company;
 
-import src.by.itacademy.user.User;
-
+import by.itacademy.user.User;
 import java.util.ArrayList;
 import java.util.List;
-
 
 public class Users {
     public List<User> getUsersList(int amount) {

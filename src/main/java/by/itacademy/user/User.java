@@ -1,4 +1,4 @@
-package src.by.itacademy.user;
+package by.itacademy.user;
 
 public class User {
     private int id;

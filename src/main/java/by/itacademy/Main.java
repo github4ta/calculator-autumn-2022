@@ -1,7 +1,7 @@
-package src.by.itacademy;
+package by.itacademy;
 
-import src.by.itacademy.company.Company;
-import src.by.itacademy.company.Users;
+import by.itacademy.company.Company;
+import by.itacademy.company.Users;
 
 public class Main {
     public static void main(String[] args) {

@@ -25,15 +25,15 @@ public class Main{
                 459, 14.6, "hard"));
         list.add(new Book(34, "PHP", "Orlov", "Focus", 2008,
                 459, 14.6, "hard"));
-        books.printAuthorBook(list,"Blinov");
-        books.printPublisherBook(list,"Focus");
+        books.printAuthorBook(list,"y");
+        books.printPublisherBook(list,"f");
         books.printByYear(list,2000);
 
     }
 }
 /*
 The list of books by a given author
-Java
+Not found
 The list of books by a given publisher
 PHP
 PHP

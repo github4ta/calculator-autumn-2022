@@ -5,8 +5,6 @@ import by.itacademy.marchuk_viktor.entity.Book;
 import java.util.ArrayList;
 
 public class SearchingBooks{
-    private ArrayList <Book> bookArrayList;
-
     public SearchingBooks(){
 
     }
@@ -15,7 +13,7 @@ public class SearchingBooks{
         System.out.println("The list of books by a given author");
         boolean flag = true;
         for(int i = 0; i < list.size(); i++){
-            if(list.get(i).getAuthor().equals(author)){
+            if(list.get(i).getAuthor().toLowerCase().contains(author)){
                 System.out.println(list.get(i).getBookName());
                 flag = false;
             }
@@ -29,7 +27,7 @@ public class SearchingBooks{
         System.out.println("The list of books by a given publisher");
         boolean flag = true;
         for(int i = 0; i < list.size(); i++){
-            if(list.get(i).getPublisher().equals(publisher)){
+            if(list.get(i).getPublisher().toLowerCase().contains(publisher)){
                 System.out.println(list.get(i).getBookName());
                 flag = false;
             }

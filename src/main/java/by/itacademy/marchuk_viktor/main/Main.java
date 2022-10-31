@@ -10,12 +10,14 @@ c) список книг, выпущенных после заданного г�
 
 import by.itacademy.marchuk_viktor.entity.Book;
 import by.itacademy.marchuk_viktor.service.SearchingBooks;
+import by.itacademy.marchuk_viktor.service.SearchingBooksAnotherWay;
 
 import java.util.ArrayList;
 
 public class Main{
     public static void main(String[] args){
-        SearchingBooks books=new SearchingBooks();
+        SearchingBooks books = new SearchingBooks();
+        SearchingBooksAnotherWay booksAnotherWay = new SearchingBooksAnotherWay();
         ArrayList <Book> list = new ArrayList <>();
 
         // examples for checking
@@ -23,22 +25,22 @@ public class Main{
                 678, 23.2, "soft"));
         list.add(new Book(34, "PHP", "Petrov", "Focus", 2002,
                 459, 14.6, "hard"));
-        list.add(new Book(34, "PHP", "Orlov", "Focus", 2008,
+        list.add(new Book(34, "C++", "Orlov", "Focus", 2008,
                 459, 14.6, "hard"));
-        books.printAuthorBook(list,"y");
-        books.printPublisherBook(list,"f");
-        books.printByYear(list,2000);
+//        books.printAuthorBook(list,"y");
+//        books.printPublisherBook(list,"f");
+//        books.printByYear(list,2000);
+        booksAnotherWay.printBookByAuthor(list, "Blinov");
+        booksAnotherWay.printBookByPublisher(list, "Foc");
+        booksAnotherWay.printByYear(list, 2005);
 
     }
 }
 /*
 The list of books by a given author
-Not found
-The list of books by a given publisher
-PHP
-PHP
-The list of books after given year
 Java
-PHP
-PHP
+The list of books by a given publisher
+Not found
+The list of books after given year
+C++
  */

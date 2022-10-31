@@ -4,14 +4,13 @@ import by.itacademy.marchuk_viktor.entity.Book;
 
 import java.util.ArrayList;
 
-public class SearchingBooks{
-
-    public void printAuthorBook(ArrayList <Book> list, String author){
+public class SearchingBooksAnotherWay{
+    public void printBookByAuthor(ArrayList <Book> list, String author){
         System.out.println("The list of books by a given author");
         boolean flag = true;
-        for(int i = 0; i < list.size(); i++){
-            if(list.get(i).getAuthor().toLowerCase().contains(author)){
-                System.out.println(list.get(i).getBookName());
+        for(Book b: list){
+            if(b.getAuthor().equalsIgnoreCase(author)){
+                System.out.println(b.getBookName());
                 flag = false;
             }
         }
@@ -20,12 +19,12 @@ public class SearchingBooks{
         }
     }
 
-    public void printPublisherBook(ArrayList <Book> list, String publisher){
+    public void printBookByPublisher(ArrayList <Book> list, String publisher){
         System.out.println("The list of books by a given publisher");
         boolean flag = true;
-        for(int i = 0; i < list.size(); i++){
-            if(list.get(i).getPublisher().toLowerCase().contains(publisher)){
-                System.out.println(list.get(i).getBookName());
+        for(Book b: list){
+            if(b.getPublisher().equalsIgnoreCase(publisher)){
+                System.out.println(b.getBookName());
                 flag = false;
             }
         }
@@ -37,9 +36,9 @@ public class SearchingBooks{
     public void printByYear(ArrayList <Book> list, int year){
         System.out.println("The list of books after given year");
         boolean flag = true;
-        for(int i = 0; i < list.size(); i++){
-            if(list.get(i).getYearOfPublication() > year){
-                System.out.println(list.get(i).getBookName());
+        for(Book b: list){
+            if(b.getYearOfPublication() > year){
+                System.out.println(b.getBookName());
                 flag = false;
             }
         }
@@ -48,4 +47,3 @@ public class SearchingBooks{
         }
     }
 }
-

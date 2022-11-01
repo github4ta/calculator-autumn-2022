@@ -2,6 +2,7 @@ package by.itacademy.khilko;
 
 import by.itacademy.khilko.company.Company;
 import by.itacademy.khilko.company.Users;
+import by.itacademy.khilko.user.User;
 
 import java.util.Calendar;
 import java.util.GregorianCalendar;
@@ -31,18 +32,19 @@ public class Main {
         gc.set(GregorianCalendar.DATE, 23);
 
         House house1 = new House(1, 1, 4, 3, 3, "str. Myname 4", "Type 1", gc);
-        House house2 = new House(2, 3, 8, 6, 6, "str. Myname 5", "Type 2", gc);
-        House house3 = new House(3, 5, 12, 12, 3, "str. Myname 6", "Type 3", gc);
+        House house2 = new House(2, 3, 8, 6, 3, "str. Myname 5", "Type 2", gc);
+        House house3 = new House(3, 5, 12, 12, 4, "str. Myname 6", "Type 3", gc);
 
         housesList.add(house1);
         housesList.add(house2);
         housesList.add(house3);
 
-        System.out.println(housesList);
-
+        //ArrayList<House> houses = getRoomList(3);
+        //System.out.println(housesList);
+        printHousesList(getRoomList(3));
     }
 
-    public ArrayList<House> getRoomList(int numberOfRooms) {
+    public static ArrayList<House> getRoomList(int numberOfRooms) {
         ArrayList<House> list = new ArrayList<>();
         for (int i = 0; i < housesList.size(); i++) {
             if (housesList.get(i).getNumberOfRooms() == numberOfRooms) {
@@ -52,7 +54,7 @@ public class Main {
         return list;
     }
 
-    public ArrayList<House> getNumberOfRoomsAndFloor(int numberOfRooms, int floor) {
+    public static ArrayList<House> getNumberOfRoomsAndFloor(int numberOfRooms, int floor) {
         ArrayList<House> list = new ArrayList<>();
         for (int i = 0; i < housesList.size(); i++) {
             if ((housesList.get(i).getNumberOfRooms() == numberOfRooms) & (housesList.get(i).getFloor() == floor)) {
@@ -62,7 +64,7 @@ public class Main {
         return list;
     }
 
-    public ArrayList<House> getAreaList(double area) {
+    public static ArrayList<House> getAreaList(double area) {
         ArrayList<House> list = new ArrayList<>();
         for (int i = 0; i < housesList.size(); i++) {
             if (housesList.get(i).getArea() >= area) {
@@ -72,4 +74,15 @@ public class Main {
         return list;
     }
 
+    public static void printHousesList(){
+        for(House house: housesList){
+            System.out.println(house);
+        }
+    }
+
+    public static void printHousesList(ArrayList<House> housesList){
+        for(House house: housesList){
+            System.out.println(house);
+        }
+    }
 }

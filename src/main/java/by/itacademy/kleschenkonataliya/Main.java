@@ -11,18 +11,18 @@ public class Main {
     public static void main(String[] args) {
         Patients patients = new Patients();
         ArrayList<Patient> listOfPatients = patients.createPatientsList(10);
-        Clinic clinic1 = new Clinic(listOfPatients);
+        Clinic clinic = new Clinic(listOfPatients);
         System.out.println("Список всех пациентов клиники: ");
         System.out.println();
-        clinic1.printPatients();
+        clinic.printPatients();
         String diagnosis = "ОРВИ";
         System.out.println();
         System.out.println("Список пациентов с диагнозом \"" + diagnosis + "\":");
-        System.out.println(clinic1.createPatientsListWithDiagnosis(listOfPatients, diagnosis));
+        System.out.println(clinic.createPatientsListWithDiagnosis(listOfPatients, diagnosis));
         System.out.println();
-        int from = 30;
-        int to = 60;
-        System.out.println("Спивок пациентов с номером медкарты от " + from + " до " + to);
-        System.out.println(clinic1.createPatientsListWithCardNumber(listOfPatients, from, to));
+        int cardNumberFrom = 30;
+        int cardNumberTo = 60;
+        System.out.println("Список пациентов с номером медкарты от " + cardNumberFrom + " до " + cardNumberTo);
+        System.out.println(clinic.createPatientsListWithCardNumber(listOfPatients, cardNumberFrom, cardNumberTo));
     }
 }

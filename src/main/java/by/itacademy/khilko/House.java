@@ -2,6 +2,9 @@ package by.itacademy.khilko;
 
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+
+import java.util.List;
+import java.util.ArrayList;
 /*
 House: id, Номер квартиры, Площадь, Этаж, Количество комнат, Улица, Тип
 здания, Срок эксплуатации.
@@ -20,7 +23,9 @@ public class House {
     private int numberOfRooms;
     private String street;
     private String buildingType;
-    private GregorianCalendar serviceLife;
+    private int serviceLife;
+
+
 
     public House(int id, int apartmentNumber, double area, int floor, int numberOfRooms, String street, String buildingType, GregorianCalendar serviceLife) {
         this.id = id;
@@ -30,7 +35,7 @@ public class House {
         this.numberOfRooms = numberOfRooms;
         this.street = street;
         this.buildingType = buildingType;
-        this.serviceLife = serviceLife;
+        this.serviceLife = serviceLife.get(Calendar.YEAR);;
     }
 
     public int getId() {
@@ -105,14 +110,14 @@ public class House {
         this.buildingType = buildingType;
     }
 
-    public GregorianCalendar getServiceLife() {
+    public int getServiceLife() {
         return serviceLife;
     }
 
     public void setServiceLife(GregorianCalendar serviceLife) {
         GregorianCalendar currentTime = new GregorianCalendar();
         if(serviceLife.get(Calendar.YEAR) < currentTime.get(Calendar.YEAR)) {
-            this.serviceLife = serviceLife;
+            this.serviceLife = serviceLife.get(Calendar.YEAR);
         }else{
             throw new IllegalArgumentException();
         }

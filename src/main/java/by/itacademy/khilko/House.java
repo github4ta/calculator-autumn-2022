@@ -1,29 +1,28 @@
 package by.itacademy.khilko;
+
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 /*
 House: id, Номер квартиры, Площадь, Этаж, Количество комнат, Улица, Тип
 здания, Срок эксплуатации.
-КЛАССЫ И МЕТОДЫ
-113
+
 Создать массив объектов. Вывести:
 a) список квартир, имеющих заданное число комнат;
 b) список квартир, имеющих заданное число комнат и расположенных на
 этаже, который находится в заданном промежутке;
 c) список квартир, имеющих площадь, превосходящую заданную.
-
-id, Apartment number, Area, Floor, Number of rooms, Street,
-Building type, Service life.
  */
 public class House {
     private int id;
     private int apartmentNumber;
-    private int area;
+    private double area;
     private int floor;
     private int numberOfRooms;
     private String street;
     private String buildingType;
-    private int serviceLife;
+    private GregorianCalendar serviceLife;
 
-    public House(int id, int apartmentNumber, int area, int floor, int numberOfRooms, String street, String buildingType, int serviceLife) {
+    public House(int id, int apartmentNumber, double area, int floor, int numberOfRooms, String street, String buildingType, GregorianCalendar serviceLife) {
         this.id = id;
         this.apartmentNumber = apartmentNumber;
         this.area = area;
@@ -47,15 +46,23 @@ public class House {
     }
 
     public void setApartmentNumber(int apartmentNumber) {
-        this.apartmentNumber = apartmentNumber;
+        if(apartmentNumber >=1) {
+            this.apartmentNumber = apartmentNumber;
+        }else{
+            throw new IllegalArgumentException();
+        }
     }
 
-    public int getArea() {
+    public double getArea() {
         return area;
     }
 
-    public void setArea(int area) {
-        this.area = area;
+    public void setArea(double area) {
+        if(area >= 0) {
+            this.area = area;
+        }else{
+            throw new IllegalArgumentException();
+        }
     }
 
     public int getFloor() {
@@ -63,7 +70,11 @@ public class House {
     }
 
     public void setFloor(int floor) {
-        this.floor = floor;
+        if(floor > 0 ) {
+            this.floor = floor;
+        }else{
+            throw new IllegalArgumentException();
+        }
     }
 
     public int getNumberOfRooms() {
@@ -71,7 +82,11 @@ public class House {
     }
 
     public void setNumberOfRooms(int numberOfRooms) {
-        this.numberOfRooms = numberOfRooms;
+        if(numberOfRooms >=1) {
+            this.numberOfRooms = numberOfRooms;
+        }else{
+            throw new IllegalArgumentException();
+        }
     }
 
     public String getStreet() {
@@ -90,12 +105,17 @@ public class House {
         this.buildingType = buildingType;
     }
 
-    public int getServiceLife() {
+    public GregorianCalendar getServiceLife() {
         return serviceLife;
     }
 
-    public void setServiceLife(int serviceLife) {
-        this.serviceLife = serviceLife;
+    public void setServiceLife(GregorianCalendar serviceLife) {
+        GregorianCalendar currentTime = new GregorianCalendar();
+        if(serviceLife.get(Calendar.YEAR) < currentTime.get(Calendar.YEAR)) {
+            this.serviceLife = serviceLife;
+        }else{
+            throw new IllegalArgumentException();
+        }
     }
 
     @Override

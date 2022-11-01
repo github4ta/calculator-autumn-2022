@@ -1,7 +1,7 @@
-package by.itacademy;
+package by.itacademy.khilko;
 
-import by.itacademy.company.Company;
-import by.itacademy.company.Users;
+import by.itacademy.khilko.company.Company;
+import by.itacademy.khilko.company.Users;
 
 public class Main {
     public static void main(String[] args) {

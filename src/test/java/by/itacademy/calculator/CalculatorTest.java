@@ -29,4 +29,15 @@ public class CalculatorTest {
 
        Assert.assertEquals(expected, actual, 0.1);
     }
+    @Test
+    public void testDivide(){
+        Calculator calculator = new Calculator();
+        float expected = 8.0f;
+        float a = 16.0f;
+        float b = 2.0f;
+
+        float actual = calculator.divide(a, b);
+
+        Assert.assertEquals(expected, actual, 0.1);
+    }
 }

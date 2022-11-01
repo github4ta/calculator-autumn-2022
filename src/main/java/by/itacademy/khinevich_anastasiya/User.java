@@ -2,7 +2,7 @@ package by.itacademy.khinevich_anastasiya;
 
 import java.util.Objects;
 
-public class User {
+public class User implements Comparable<User> {
     private int id; // id
     private int numberCreditCard; // номер кредитной карты
     private String lastName; // фамилия
@@ -11,7 +11,14 @@ public class User {
     private String debitCard; // дебит
     private String creditCard; // кредит
     private int timeCallInsideCity; // время городских разговоров
-    private int getTimeCallOutsideCity; // время междугородних разговоров
+    private int timeCallOutsideCity; // время междугородних разговоров
+
+
+    public User(String lastName, int timeCallInsideCity, int timeCallOutsideCity) {
+        this.lastName = lastName;
+        this.timeCallInsideCity = timeCallInsideCity;
+        this.timeCallOutsideCity = timeCallOutsideCity;
+    }
 
     public User(int id, int numberCreditCard, String lastName, String name, String middleName) {
         this.id = id;
@@ -21,7 +28,7 @@ public class User {
         this.middleName = middleName;
     }
 
-    public User(int id, int numberCreditCard, String lastName, String name, String middleName, String debitCard, String creditCard, int timeCallInsideCity, int getTimeCallOutsideCity) {
+    public User(int id, int numberCreditCard, String lastName, String name, String middleName, String debitCard, String creditCard, int timeCallInsideCity, int timeCallOutsideCity) {
         this.id = id;
         this.numberCreditCard = numberCreditCard;
         this.lastName = lastName;
@@ -30,7 +37,7 @@ public class User {
         this.debitCard = debitCard;
         this.creditCard = creditCard;
         this.timeCallInsideCity = timeCallInsideCity;
-        this.getTimeCallOutsideCity = getTimeCallOutsideCity;
+        this.timeCallOutsideCity = timeCallOutsideCity;
     }
 
     public int getId() {
@@ -97,14 +104,15 @@ public class User {
         this.timeCallInsideCity = timeCallInsideCity;
     }
 
-    public int getGetTimeCallOutsideCity() {
-        return getTimeCallOutsideCity;
+    public int getTimeCallOutsideCity() {
+        return timeCallOutsideCity;
     }
 
-    public void setGetTimeCallOutsideCity(int getTimeCallOutsideCity) {
-        this.getTimeCallOutsideCity = getTimeCallOutsideCity;
+    public void setTimeCallOutsideCity(int timeCallOutsideCity) {
+        this.timeCallOutsideCity = timeCallOutsideCity;
     }
 
+/*
     @Override
     public String toString() {
         return "User{" +
@@ -115,6 +123,13 @@ public class User {
                 ", middleName='" + middleName + '\''  +
                 '}';
     }
+*/
+
+    @Override
+    public String toString() {
+        return String.format("User{lastName=%s,timeCallInsideCity=%s,timeCallOutsideCity=%s}", lastName, timeCallInsideCity, timeCallOutsideCity);
+    }
+
 
     @Override
     public boolean equals(Object o) {
@@ -122,7 +137,7 @@ public class User {
         if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
 
-        return id == user.id && numberCreditCard == user.numberCreditCard && timeCallInsideCity == user.timeCallInsideCity && getTimeCallOutsideCity == user.getTimeCallOutsideCity && Objects.equals(lastName, user.lastName) && Objects.equals(name, user.name) && Objects.equals(middleName, user.middleName) && Objects.equals(debitCard, user.debitCard) && Objects.equals(creditCard, user.creditCard);
+        return id == user.id && numberCreditCard == user.numberCreditCard && timeCallInsideCity == user.timeCallInsideCity && timeCallOutsideCity == user.timeCallOutsideCity && Objects.equals(lastName, user.lastName) && Objects.equals(name, user.name) && Objects.equals(middleName, user.middleName) && Objects.equals(debitCard, user.debitCard) && Objects.equals(creditCard, user.creditCard);
     }
 
     @Override
@@ -135,7 +150,12 @@ public class User {
         result = 31*result + getDebitCard().hashCode();
         result = 31*result + getCreditCard().hashCode();
         result = 31*result + getTimeCallInsideCity();
-        result = 31*result + getTimeCallOutsideCity;
+        result = 31*result + timeCallOutsideCity;
         return result;
+    }
+
+    @Override
+    public int compareTo(User user) {
+        return this.lastName.compareTo(user.lastName);
     }
 }

@@ -10,7 +10,8 @@ public class Users {
     public ArrayList<User> getUsersList(int count) {
         ArrayList<User> listOfUsers = new ArrayList<>();
         for (int i = 0; i < count; i++) {
-            listOfUsers.add(new User(generateId(), generateNumberCreditCard(), generateLastName(), generateName(), generateMiddleName()));
+//            listOfUsers.add(new User(generateId(), generateNumberCreditCard(), generateLastName(), generateName(), generateMiddleName()));
+            listOfUsers.add(new User(generateLastName(), generateTimeCallInsideCity(), generateTimeCallOutsideCity()));
         }
         return listOfUsers;
     }
@@ -42,6 +43,14 @@ public class Users {
     private String generateMiddleName() {
         String[] middleNames = new String[]{"Alekseevicz", "Olegovich", "Anastasievich", "Joelovisz", "Markowicz", "Sergeevicz"};
         return getString(middleNames);
+    }
+
+    private int generateTimeCallInsideCity() {
+        return (int) (Math.random() * 99) + 1;
+    }
+
+    private int generateTimeCallOutsideCity() {
+        return (int) (Math.random() * 99) + 1;
     }
 }
 

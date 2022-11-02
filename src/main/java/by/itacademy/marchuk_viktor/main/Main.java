@@ -9,6 +9,7 @@ c) список книг, выпущенных после заданного г�
  */
 
 import by.itacademy.marchuk_viktor.entity.Book;
+import by.itacademy.marchuk_viktor.service.SearchByStream;
 import by.itacademy.marchuk_viktor.service.SearchingBooks;
 import by.itacademy.marchuk_viktor.service.SearchingBooksAnotherWay;
 
@@ -19,6 +20,7 @@ public class Main{
         SearchingBooks books = new SearchingBooks();
         SearchingBooksAnotherWay booksAnotherWay = new SearchingBooksAnotherWay();
         ArrayList <Book> list = new ArrayList <>();
+        SearchByStream stream = new SearchByStream();
 
         // examples for checking
         list.add(new Book(12, "Java", "Blinov", "Svet", 2005,
@@ -30,10 +32,12 @@ public class Main{
 //        books.printAuthorBook(list,"y");
 //        books.printPublisherBook(list,"f");
 //        books.printByYear(list,2000);
-        booksAnotherWay.printBookByAuthor(list, "Blinov");
-        booksAnotherWay.printBookByPublisher(list, "Foc");
-        booksAnotherWay.printByYear(list, 2005);
-
+//        booksAnotherWay.printBookByAuthor(list, "Blinov");
+//        booksAnotherWay.printBookByPublisher(list, "Foc");
+//        booksAnotherWay.printByYear(list, 2005);
+        stream.printByAuthorBookStream(list, "Blinov");
+        System.out.println(stream.printByPublisherStream(list, "Focus"));
+        stream.printByYearStream(list, 2001);
     }
 }
 /*

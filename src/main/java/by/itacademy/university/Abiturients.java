@@ -8,6 +8,8 @@ public class Abiturients {
     public ArrayList<Abiturient> generateList() {
         Map<String, Integer> subjectAndMark = new HashMap<>();
         subjectAndMark.put("Math", 8);
+        subjectAndMark.put("English", 7);
+        subjectAndMark.put("Biology", 4);
         ArrayList<Abiturient> abiturients = new ArrayList<>();
         abiturients.add(new Abiturient("Mike", subjectAndMark));
         return abiturients;

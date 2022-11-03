@@ -5,7 +5,10 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) {
         Abiturients abiturients = new Abiturients();
-        ArrayList<Abiturient> listOfAbiturientsWithSubjectsAndMarks = abiturients.generateList();
-        System.out.println(listOfAbiturientsWithSubjectsAndMarks);
+        //ArrayList<Abiturient> listOfAbiturientsWithSubjectsAndMarks = abiturients.generateList();
+        //System.out.println(listOfAbiturientsWithSubjectsAndMarks);
+
+        System.out.println(abiturients.generateList(10, 5));
+
     }
 }

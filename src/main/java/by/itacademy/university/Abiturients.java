@@ -5,13 +5,39 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Abiturients {
-    public ArrayList<Abiturient> generateList() {
-        Map<String, Integer> subjectAndMark = new HashMap<>();
-        subjectAndMark.put("Math", 8);
-        subjectAndMark.put("English", 7);
-        subjectAndMark.put("Biology", 4);
+    public ArrayList<Abiturient> generateList(int numberOfAbiturients, int maxSubjects) {
         ArrayList<Abiturient> abiturients = new ArrayList<>();
-        abiturients.add(new Abiturient("Mike", subjectAndMark));
+        for (int i = 0; i < numberOfAbiturients; i++) {
+            Map<String, Integer> subjectAndMark = generateSubjectsList(maxSubjects);
+            String randomName = randomName();
+            abiturients.add(new Abiturient(randomName, subjectAndMark));
+        }
         return abiturients;
     }
+
+    public Map<String, Integer> generateSubjectsList(int maxSubjects) {
+        Map<String, Integer> subjectAndMark = new HashMap<>();
+        for (int i = 0; i < maxSubjects; i++) {
+            subjectAndMark.put(randomSubject(), randomWithRange(1, 10));
+        }a
+        return subjectAndMark;
+    }
+
+    private int randomWithRange(int min, int max) {
+        int range = (max - min) + 1;
+        return (int) (Math.random() * range) + min;
+    }
+
+    public String randomSubject() {
+        String[] subjectsList = new String[]{"Algebra", "Biology", "Drawing", "Chemistry", "Geography", "Geometry", "History", "Literature", "Mathematics", "Music", "Physical", "Physics", "Technology"};
+        int random = (int) (Math.random() * subjectsList.length);
+        return subjectsList[random];
+    }
+
+    public String randomName() {
+        String[] namesList = new String[]{"James", "David", "Christopher", "George", "Ronald", "John", "Richard", "Daniel", "Kenneth", "Anthony", "Robert", "Charles", "Paul", "Steven", "Kevin", "Michael", "Joseph", "Mark", "Edward", "Jason", "William", "Thomas", "Donald", "Brian", "Jeff"};
+        int random = (int) (Math.random() * namesList.length);
+        return namesList[random];
+    }
+
 }

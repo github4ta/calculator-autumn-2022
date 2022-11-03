@@ -31,15 +31,15 @@ public class Abiturients {
 
     public String randomSubject() {
         String[] subjectsList = new String[]{"Algebra", "Biology", "Drawing", "Chemistry", "Geography", "Geometry", "History", "Literature", "Mathematics", "Music", "Physical", "Physics", "Technology"};
-        return getRandomElement(subjectsList);
+        return randomElement(subjectsList);
     }
 
     public String randomName() {
         String[] namesList = new String[]{"James", "David", "Christopher", "George", "Ronald", "John", "Richard", "Daniel", "Kenneth", "Anthony", "Robert", "Charles", "Paul", "Steven", "Kevin", "Michael", "Joseph", "Mark", "Edward", "Jason", "William", "Thomas", "Donald", "Brian", "Jeff"};
-        return getRandomElement(namesList);
+        return randomElement(namesList);
     }
 
-    public String getRandomElement(String[] list) {
+    public String randomElement(String[] list) {
         int random = (int) (Math.random() * list.length);
         return list[random];
     }

@@ -3,6 +3,7 @@ package by.itacademy.university;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
 
 public class Abiturients {
     public ArrayList<Abiturient> generateList(int numberOfAbiturients, int maxSubjects) {
@@ -17,9 +18,10 @@ public class Abiturients {
 
     public Map<String, Integer> generateSubjectsList(int maxSubjects) {
         Map<String, Integer> subjectAndMark = new HashMap<>();
-        for (int i = 0; i < maxSubjects; i++) {
+        int countOfSubject = (int) (Math.random() * maxSubjects) + 1;
+        for (int i = 0; i < countOfSubject; i++) {
             subjectAndMark.put(randomSubject(), randomWithRange(1, 10));
-        }a
+        }
         return subjectAndMark;
     }
 

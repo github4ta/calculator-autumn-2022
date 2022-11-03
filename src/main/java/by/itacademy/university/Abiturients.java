@@ -17,14 +17,13 @@ public class Abiturients {
 
     public Map<String, Integer> generateSubjectsList(int maxSubjects) {
         Map<String, Integer> subjectAndMark = new HashMap<>();
-        int randomSubjects = randomWithRange(1, maxSubjects);
-        for (int i = 0; i < randomSubjects; i++) {
+        for (int i = 0; i < maxSubjects; i++) {
             subjectAndMark.put(randomSubject(), randomWithRange(1, 10));
         }
         return subjectAndMark;
     }
 
-    public int randomWithRange(int min, int max) {
+    private int randomWithRange(int min, int max) {
         int range = (max - min) + 1;
         return (int) (Math.random() * range) + min;
     }

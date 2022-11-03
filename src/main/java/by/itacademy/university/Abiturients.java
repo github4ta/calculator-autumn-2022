@@ -3,23 +3,26 @@ package by.itacademy.university;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import com.github.javafaker.Faker;
 
 public class Abiturients {
+    Faker faker = new Faker();
     public ArrayList<Abiturient> generateList(int numberOfAbiturients, int maxSubjects) {
         ArrayList<Abiturient> abiturients = new ArrayList<>();
         for (int i = 0; i < numberOfAbiturients; i++) {
-            Map<String, Integer> subjectAndMark = generateSubjectsList(maxSubjects);
-            String randomName = randomName();
-            abiturients.add(new Abiturient(randomName, subjectAndMark));
+            Map<String, Integer> subjectAndMark = generateSubjectMap(maxSubjects);
+
+            abiturients.add(new Abiturient(faker.name().firstName(), subjectAndMark));
         }
         return abiturients;
     }
 
-    public Map<String, Integer> generateSubjectsList(int maxSubjects) {
+    public Map<String, Integer> generateSubjectMap(int maxSubjects) {
         Map<String, Integer> subjectAndMark = new HashMap<>();
-        for (int i = 0; i < maxSubjects; i++) {
+        int b = randomWithRange(1, maxSubjects);
+        for (int i = 0; i < b; i++) {
             subjectAndMark.put(randomSubject(), randomWithRange(1, 10));
-        }a
+        }
         return subjectAndMark;
     }
 

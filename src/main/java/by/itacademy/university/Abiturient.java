@@ -2,6 +2,8 @@ package by.itacademy.university;
 
 import java.util.Map;
 import java.util.Objects;
+import com.github.javafaker.Faker;
+
 
 public class Abiturient {
     private String name;

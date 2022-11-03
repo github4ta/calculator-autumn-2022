@@ -8,7 +8,7 @@ public class Main {
         //ArrayList<Abiturient> listOfAbiturientsWithSubjectsAndMarks = abiturients.generateList();
         //System.out.println(listOfAbiturientsWithSubjectsAndMarks);
 
-        System.out.println(abiturients.generateList(10, 5));
+        System.out.println(abiturients.generateList(5, 5));
 
     }
 }

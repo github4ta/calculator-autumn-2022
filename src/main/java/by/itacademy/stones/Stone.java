@@ -52,7 +52,6 @@ public class Stone implements Comparable  {
     public String toString() {
         return "{Stone: " + name + ", Transparency: " + transparency + ", Weight: " + weight + ", Cost: " + cost + "}";
     }
-
     public int compareTo(Object obj) {
         Stone tmp = (Stone) obj;
         if (this.cost < tmp.cost) {

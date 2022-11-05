@@ -13,7 +13,6 @@ public class StoneFactory {
         return null;
 
     }
-
     enum PreciousStonesNames {
         Diamond("Diamond"), Sapphire("Sapphire");
         private String name;

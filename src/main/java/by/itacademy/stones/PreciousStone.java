@@ -1,7 +1,6 @@
 package by.itacademy.stones;
 
 public class PreciousStone extends Stone {
-
     public PreciousStone() {
     }
 

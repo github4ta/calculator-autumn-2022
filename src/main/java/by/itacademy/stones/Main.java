@@ -39,7 +39,6 @@ public class Main {
             Stone current2 = StoneFactory.getStone(stoneHeap.get(1));
 
             //System.out.println(current);
-
             Necklace necklace = new Necklace.Builder(stoneHeap).stoneName("Diamond").stoneName("Sapphire").stoneName("Turquoise")
                     .stoneName("Amber").build();
             System.out.println(necklace);

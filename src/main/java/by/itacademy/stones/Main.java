@@ -47,7 +47,6 @@ public class Main {
             System.out.println(necklace);
             System.out.println(necklace.getStonesByTransparency(0.5f, 0.6f));
 
-
             /*
             GsonBuilder builder = new GsonBuilder();
             Gson gson = builder.create();

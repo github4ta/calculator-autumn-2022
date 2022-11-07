@@ -1,6 +1,7 @@
-package by.itacademy.company;
+package by.itacademy.khilko.company;
 
-import by.itacademy.user.User;
+import by.itacademy.khilko.user.User;
+
 import java.util.List;
 
 public class Company{

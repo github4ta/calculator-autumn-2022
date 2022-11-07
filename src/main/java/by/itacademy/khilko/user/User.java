@@ -1,4 +1,4 @@
-package by.itacademy.user;
+package by.itacademy.khilko.user;
 
 public class User {
     private int id;

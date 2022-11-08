@@ -50,4 +50,10 @@ public class Utils {
                 .collect(Collectors.toList());
 
     }
+    public static void printWagonResult(int value) {
+        System.out.println(value);
+    }
+    public static void printListWagonResult(List value) {
+        System.out.println(value);
+    }
 }

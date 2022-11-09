@@ -21,7 +21,7 @@ public class Main {
         System.out.println("\nsorted by Comparator SortByState():");
         devicesAction.sortByState(devices);
         System.out.println(devicesAction.calculatedPower(devices));
-        System.out.println("\nFound [300 - 400]:");
+        System.out.println("\nFound [300 - 400]: ");
         System.out.println(devicesAction.foundByPower(devices, 300, 400));
     }
 }

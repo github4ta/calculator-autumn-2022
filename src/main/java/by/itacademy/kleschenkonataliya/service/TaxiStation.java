@@ -18,7 +18,7 @@ public class TaxiStation {
         }
     }
 
-    public int calculatePrice(ArrayList<Car> listOfCars) {
+    public int calculatePrice() {
         int totalPrice = 0;
         for (Car car : listOfCars) {
             totalPrice += car.getPrice();
@@ -26,12 +26,12 @@ public class TaxiStation {
         return totalPrice;
     }
 
-    public ArrayList<Car> sortCarsByFuelConsumption(ArrayList<Car> initialListOfCars) {
-        initialListOfCars.sort(new CarFuelConsumptionComparator());
-        return initialListOfCars;
+    public ArrayList<Car> sortCarsByFuelConsumption() {
+        listOfCars.sort(new CarFuelConsumptionComparator());
+        return listOfCars;
     }
 
-    public ArrayList<Car> findCarBySpeedRange(ArrayList<Car> listOfCars, int from, int to) {
+    public ArrayList<Car> findCarBySpeedRange(int from, int to) {
         ArrayList<Car> carsWithTargetSpeedRange = new ArrayList<>();
         for (Car car : listOfCars) {
             if (car.getMaxSpeed() >= from && car.getMaxSpeed() <= to)

@@ -7,13 +7,6 @@ public class Renault extends Car {
 
     @Override
     public String toString() {
-        final StringBuffer sb = new StringBuffer("Renault{");
-        sb.append("id=").append(id);
-        sb.append(", model='").append(model).append('\'');
-        sb.append(", maxSpeed=").append(maxSpeed);
-        sb.append(", fuelConsumption=").append(fuelConsumption);
-        sb.append(", price=").append(price);
-        sb.append('}');
-        return sb.toString();
+        return String.format("Renault{id = %s, model = %s, maxSpeed = %s, fuelConsumption = %s, price = %s", id, model, maxSpeed, fuelConsumption, price);
     }
 }
